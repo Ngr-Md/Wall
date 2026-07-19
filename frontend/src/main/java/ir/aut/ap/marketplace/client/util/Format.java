@@ -9,15 +9,15 @@ public final class Format {
     }
 
     public static String price(long price) {
-        return NumberFormat.getInstance(Locale.US).format(price) + " تومان";
+        return NumberFormat.getInstance(Locale.US).format(price) + " چندرغاز";
     }
 
     public static String statusFa(String status) {
         return switch (status) {
             case "PENDING" -> "در انتظار تایید";
-            case "APPROVED" -> "تاییدشده";
-            case "REJECTED" -> "ردشده";
-            case "SOLD" -> "فروخته‌شده";
+            case "APPROVED" -> "تایید شده";
+            case "REJECTED" -> "رد شده";
+            case "SOLD" -> "فروخته شده";
             default -> status;
         };
     }
