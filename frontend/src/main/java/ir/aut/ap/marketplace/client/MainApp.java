@@ -8,7 +8,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("سامانه خرید و فروش دست دوم");
+        primaryStage.setTitle("WALL");
         primaryStage.setMaximized(true);
         primaryStage.setFullScreenExitHint("");
         Navigator.init(primaryStage);
