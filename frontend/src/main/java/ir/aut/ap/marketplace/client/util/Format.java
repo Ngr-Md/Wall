@@ -14,10 +14,10 @@ public final class Format {
 
     public static String statusFa(String status) {
         return switch (status) {
-            case "PENDING" -> "در انتظار تایید";
-            case "APPROVED" -> "تایید شده";
-            case "REJECTED" -> "رد شده";
-            case "SOLD" -> "فروخته شده";
+            case "PENDING" -> "هنوز تایید نشده برار...";
+            case "APPROVED" -> "تایید شده، زنده باد!";
+            case "REJECTED" -> "رد شده، افسوس!";
+            case "SOLD" -> "فروخته شده، هورااا!";
             default -> status;
         };
     }
