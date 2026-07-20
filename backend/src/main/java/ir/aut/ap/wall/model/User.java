@@ -33,7 +33,7 @@ public class User {
     @Column(nullable = false)
     private Instant createdAt = Instant.now();
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "boolean default false")
     private boolean blocked = false;
 
     public User() {
