@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ir.aut.ap</groupId>
-    <artifactId>marketplace-frontend</artifactId>
+    <artifactId>wall-frontend</artifactId>
     <version>1.0.0</version>
-    <name>marketplace-frontend</name>
-    <description>Second-hand marketplace JavaFX client (AP Project - AUT)</description>
+    <name>wall-frontend</name>
+    <description>Second-hand wall JavaFX client (AP Project - AUT)</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -47,7 +47,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>ir.aut.ap.marketplace.client.MainApp</mainClass>
+                    <mainClass>ir.aut.ap.wall.client.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
