@@ -1,4 +1,4 @@
-package ir.aut.ap.marketplace.client.util;
+package ir.aut.ap.wall.client.util;
 
 import java.text.NumberFormat;
 import java.util.Locale;
