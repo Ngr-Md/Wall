@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ir.aut.ap.marketplace.client.controller.RegisterController">
+    <VBox alignment="CENTER" maxWidth="460" spacing="12" styleClass="card">
+        <padding>
+            <Insets bottom="30" left="30" right="30" top="30"/>
+        </padding>
+        <Label styleClass="title-label" text="اومدی ثبت نام کنی!!"/>
+        <TextField fx:id="usernameField" promptText="یوزر نیمت رو انتخاب کن!"/>
+        <PasswordField fx:id="passwordField" promptText="رمز عبورت رو میگی؟؟"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="نشنیدم، دوباره میگی؟"/>
+        <TextField fx:id="fullNameField" promptText="اسم و فامیلت رو هم بگو لطفا"/>
+        <TextField fx:id="emailField" promptText="ایمیلت رو هم بده که مزاحم بشیم"/>
+        <TextField fx:id="phoneField" promptText="اگر دلت خواست شمارت رو هم بده بانو (؟)"/>
+        <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
+        <Button maxWidth="Infinity" onAction="#onRegister" styleClass="primary-button" text="بزن بریم"/>
+        <Hyperlink onAction="#onGoToLogin" text="اگر اکانت داری اینو بزن تا لاگین کنی"/>
+    </VBox>
+</StackPane>
