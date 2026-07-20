@@ -114,31 +114,6 @@ public class AdService {
                 .orElseThrow(() -> ApiException.notFound("آگهی یافت نشد"));
     }
 
-    private void applyRequest(Advertisement ad, AdRequest request) {
-        Category category = categoryRepository.findById(request.categoryId())
-                .orElseThrow(() -> ApiException.badRequest("دسته‌بندی نامعتبر است"));
-        City city = cityRepository.findById(request.cityId())
-                .orElseThrow(() -> ApiException.badRequest("شهر نامعتبر است"));
-        ad.setTitle(request.title().trim());
-        ad.setDescription(request.description().trim());
-        ad.setPrice(request.price());
-        ad.setCategory(category);
-        ad.setCity(city);
-        private void applyRequest(Advertisement ad, AdRequest request) {
-            Category category = categoryRepository.findById(request.categoryId())
-                    .orElseThrow(() -> ApiException.badRequest("دسته‌بندی نامعتبر است"));
-            City city = cityRepository.findById(request.cityId())
-                    .orElseThrow(() -> ApiException.badRequest("شهر نامعتبر است"));
-            ad.setTitle(request.title().trim());
-            ad.setDescription(request.description().trim());
-            ad.setPrice(request.price());
-            ad.setCategory(category);
-            ad.setCity(city);
-            String images = (request.imagesBase64() == null || request.imagesBase64().isEmpty())
-                    ? "" : String.join("|||", request.imagesBase64());
-            ad.setImages(images);
-        }
-    }
 
     private AdDetailsDto toDetails(Advertisement ad) {
         List<Rating> ratings = ratingRepository.findBySellerIdOrderByCreatedAtDesc(ad.getSeller().getId());
@@ -151,5 +126,20 @@ public class AdService {
             avg = sum / ratings.size();
         }
         return AdDetailsDto.of(ad, avg);
+    }
+
+    private void applyRequest(Advertisement ad, AdRequest request) {
+        Category category = categoryRepository.findById(request.categoryId())
+                .orElseThrow(() -> ApiException.badRequest("دسته‌بندی نامعتبر است"));
+        City city = cityRepository.findById(request.cityId())
+                .orElseThrow(() -> ApiException.badRequest("شهر نامعتبر است"));
+        ad.setTitle(request.title().trim());
+        ad.setDescription(request.description().trim());
+        ad.setPrice(request.price());
+        ad.setCategory(category);
+        ad.setCity(city);
+        String images = (request.imagesBase64() == null || request.imagesBase64().isEmpty())
+                ? "" : String.join("|||", request.imagesBase64());
+        ad.setImages(images);
     }
 }
