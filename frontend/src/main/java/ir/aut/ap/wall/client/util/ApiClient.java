@@ -1,8 +1,8 @@
-package ir.aut.ap.marketplace.client.util;
+package ir.aut.ap.wall.client.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ir.aut.ap.marketplace.client.config.ApiConfig;
+import ir.aut.ap.wall.client.config.ApiConfig;
 
 import java.net.URI;
 import java.net.http.HttpClient;

@@ -1,6 +1,6 @@
-package ir.aut.ap.marketplace.client;
+package ir.aut.ap.wall.client;
 
-import ir.aut.ap.marketplace.client.util.Navigator;
+import ir.aut.ap.wall.client.util.Navigator;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ir.aut.ap.wall.client.controller.AdDetailsController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="16" right="16" top="16"/>
+            </padding>
+            <Button onAction="#onBack" styleClass="secondary-button" text="← بازگشت"/>
+            <Label fx:id="titleLabel" styleClass="title-label" text="عنوان آگهی"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="priceLabel" styleClass="title-label" text="قیمت"/>
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="16">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="0"/>
+            </padding>
+            <VBox alignment="TOP_CENTER" spacing="8" styleClass="card">
+                <ImageView fx:id="adImageView" fitHeight="320" fitWidth="400" preserveRatio="true"/>
+                <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" spacing="8">
+                    <Button fx:id="prevImageButton" onAction="#onPrevImage" styleClass="secondary-button" text="◀"/>
+                    <Label fx:id="imageCounterLabel" text="بدون تصویر"/>
+                    <Button fx:id="nextImageButton" onAction="#onNextImage" styleClass="secondary-button" text="▶"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10" styleClass="card" HBox.hgrow="ALWAYS">
+                <Label fx:id="metaLabel" styleClass="subtitle-label" text="دسته | شهر"/>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label fx:id="sellerLabel" text="فروشنده"/>
+                    <Button onAction="#onShowRatings" styleClass="secondary-button" text="مشاهده نظرات فروشنده"/>
+                </HBox>
+                <Label fx:id="statusLabel" text="وضعیت"/>
+                <TextArea fx:id="descriptionArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+                <HBox spacing="8">
+                    <Button fx:id="chatButton" onAction="#onChat" styleClass="primary-button" text="گفتگو با فروشنده"/>
+                    <Button fx:id="favoriteButton" onAction="#onToggleFavorite" styleClass="secondary-button" text="نشان کردن"/>
+                    <Button fx:id="rateButton" onAction="#onRate" styleClass="secondary-button" text="ثبت امتیاز"/>
+                    <Button fx:id="editButton" onAction="#onEdit" styleClass="secondary-button" text="ویرایش"/>
+                    <Button fx:id="soldButton" onAction="#onMarkSold" styleClass="secondary-button" text="فروخته شد"/>
+                    <Button fx:id="deleteButton" onAction="#onDelete" styleClass="secondary-button" text="حذف"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
