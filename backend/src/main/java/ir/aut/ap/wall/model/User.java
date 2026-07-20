@@ -33,6 +33,9 @@ public class User {
     @Column(nullable = false)
     private Instant createdAt = Instant.now();
 
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean blocked = false;
+
     public User() {
     }
 
@@ -61,4 +64,6 @@ public class User {
     public void setRole(Role role) { this.role = role; }
     public Instant getCreatedAt() { return createdAt; }
     public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
+    public boolean isBlocked() { return blocked; }
+    public void setBlocked(boolean blocked) { this.blocked = blocked; }
 }
