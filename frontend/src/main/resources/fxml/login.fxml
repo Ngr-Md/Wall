@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="ir.aut.ap.marketplace.client.controller.LoginController">
+           fx:controller="ir.aut.ap.wall.client.controller.LoginController">
     <VBox alignment="CENTER" maxWidth="420" spacing="14" styleClass="card">
         <padding>
             <Insets bottom="30" left="30" right="30" top="30"/>
