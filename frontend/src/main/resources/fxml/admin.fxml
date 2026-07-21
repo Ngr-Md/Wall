@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ir.aut.ap.wall.client.controller.AdminController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="16" right="16" top="16"/>
+            </padding>
+            <Button onAction="#onBack" styleClass="secondary-button" text="← بازگشت"/>
+            <Label styleClass="title-label" text="پنل ادمین — آگهی‌های در انتظار تایید"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button onAction="#onRefresh" styleClass="secondary-button" text="بروزرسانی"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="6">
+            <padding>
+                <Insets bottom="8" left="16" right="16" top="0"/>
+            </padding>
+            <Label styleClass="subtitle-label" text="برای مشاهده جزئیات آگهی، دوبار کلیک کنید"/>
+            <ListView fx:id="pendingListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="8">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="0"/>
+            </padding>
+            <Button onAction="#onApprove" styleClass="primary-button" text="تایید آگهی"/>
+            <Button onAction="#onReject" styleClass="secondary-button" text="رد آگهی"/>
+        </HBox>
+    </bottom>
+</BorderPane>

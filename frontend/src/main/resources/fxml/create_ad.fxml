@@ -17,22 +17,22 @@
             <Insets bottom="24" left="24" right="24" top="24"/>
         </padding>
         <Label fx:id="headerLabel" styleClass="title-label" text="ثبت آگهی جدید"/>
-        <TextField fx:id="titleField" promptText="عنوان آگهی"/>
-        <TextArea fx:id="descriptionArea" prefRowCount="5" promptText="توضیحات (حداقل 10 کاراکتر)" wrapText="true"/>
-        <TextField fx:id="priceField" promptText="قیمت (تومان)"/>
+        <TextField fx:id="titleField" promptText="تایتل آگهیت"/>
+        <TextArea fx:id="descriptionArea" prefRowCount="5" promptText="یه توضیحی هم بده چی داری میفروشی" wrapText="true"/>
+        <TextField fx:id="priceField" promptText="قیمت (چندرغاز)"/>
         <HBox spacing="8">
             <ComboBox fx:id="categoryCombo" promptText="دسته‌بندی" HBox.hgrow="ALWAYS"/>
             <ComboBox fx:id="cityCombo" promptText="شهر" HBox.hgrow="ALWAYS"/>
         </HBox>
         <HBox alignment="CENTER_LEFT" spacing="8">
-            <Button onAction="#onAddImage" styleClass="secondary-button" text="افزودن تصویر"/>
-            <Button onAction="#onClearImages" styleClass="secondary-button" text="حذف همه تصاویر"/>
-            <Label fx:id="imagesLabel" text="0 تصویر انتخاب شده"/>
+            <Button onAction="#onAddImage" styleClass="secondary-button" text="عکس گذاشتن"/>
+            <Button onAction="#onClearImages" styleClass="secondary-button" text="همه ی عکسا رو پاک کن!"/>
+            <Label fx:id="imagesLabel" text="عکس نذاشتیا!"/>
         </HBox>
         <Label fx:id="errorLabel" styleClass="error-label" wrapText="true"/>
         <HBox spacing="8">
-            <Button onAction="#onSubmit" styleClass="primary-button" text="ثبت"/>
-            <Button onAction="#onBack" styleClass="secondary-button" text="انصراف"/>
+            <Button onAction="#onSubmit" styleClass="primary-button" text="حله"/>
+            <Button onAction="#onBack" styleClass="secondary-button" text="کنسله"/>
         </HBox>
     </VBox>
 </StackPane>

@@ -20,12 +20,12 @@
                 <Insets bottom="10" left="16" right="16" top="16"/>
             </padding>
             <HBox alignment="CENTER_LEFT" spacing="10">
-                <Label fx:id="welcomeLabel" styleClass="title-label" text="خوش آمدید"/>
+                <Label fx:id="welcomeLabel" styleClass="title-label" text="خوش اومدی!"/>
                 <Region HBox.hgrow="ALWAYS"/>
-                <Button onAction="#onCreateAd" styleClass="primary-button" text="+ ثبت آگهی"/>
-                <Button onAction="#onMyAds" styleClass="secondary-button" text="آگهی‌های من"/>
-                <Button onAction="#onFavorites" styleClass="secondary-button" text="نشان‌شده‌ها"/>
-                <Button onAction="#onConversations" styleClass="secondary-button" text="گفتگوها"/>
+                <Button onAction="#onCreateAd" styleClass="primary-button" text="+ آگهی جدید"/>
+                <Button onAction="#onMyAds" styleClass="secondary-button" text="آگهی‌ هام"/>
+                <Button onAction="#onFavorites" styleClass="secondary-button" text="نشان هام"/>
+                <Button onAction="#onConversations" styleClass="secondary-button" text="چت هام"/>
                 <Button fx:id="adminButton" onAction="#onAdmin" styleClass="secondary-button" text="پنل ادمین"/>
                 <Button onAction="#onLogout" styleClass="secondary-button" text="خروج"/>
             </HBox>
