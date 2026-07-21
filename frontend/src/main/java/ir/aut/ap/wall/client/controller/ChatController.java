@@ -2,6 +2,7 @@ package ir.aut.ap.wall.client.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import ir.aut.ap.wall.client.util.ApiClient;
+import ir.aut.ap.wall.client.util.Format;
 import ir.aut.ap.wall.client.util.Navigator;
 import ir.aut.ap.wall.client.util.SessionManager;
 import javafx.collections.FXCollections;
@@ -35,7 +36,10 @@ public class ChatController {
                     return;
                 }
                 boolean mine = message.get("senderUsername").asText().equals(SessionManager.getCurrentUsername());
-                setText((mine ? "من: " : message.get("senderUsername").asText() + ": ") + message.get("content").asText());
+                String time = Format.messageTime(message.get("sentAt").asText());
+                setText("[" + time + "] "
+                        + (mine ? "من: " : message.get("senderUsername").asText() + ": ")
+                        + message.get("content").asText());
             }
         });
     }
