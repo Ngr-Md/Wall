@@ -27,6 +27,7 @@ public class AuthService {
         if (userRepository.findByUsername(req.username()).isPresent()) {
             throw ApiException.conflict("نام کاربریت کپیه! بیشتر خلاق باش");
         }
+
         User user = new User();
         user.setUsername(req.username());
         user.setPassword(passwordEncoder.encode(req.password()));
@@ -44,6 +45,9 @@ public class AuthService {
                 .orElseThrow(() -> ApiException.unauthorized("یچیو اشتباه زدی(نام کاربری یا رمز عبورت رو چک کن)"));
         if (!passwordEncoder.matches(req.password(), user.getPassword())) {
             throw ApiException.unauthorized("یچیو اشتباه زدی(نام کاربری یا رمز عبورت رو چک کن)");
+        }
+        if (user.isBlocked()) {
+            throw ApiException.forbidden("حساب کاربری شما مسدود شده است");
         }
         String token = jwtUtil.generateToken(user);
         return new AuthResponse(token, Dtos.UserDto.of(user));
