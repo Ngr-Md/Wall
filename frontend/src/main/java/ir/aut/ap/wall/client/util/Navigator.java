@@ -1,4 +1,4 @@
-package ir.aut.ap.marketplace.client.util;
+package ir.aut.ap.wall.client.util;
 
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.NodeOrientation;

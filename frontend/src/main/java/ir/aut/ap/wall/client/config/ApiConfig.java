@@ -1,4 +1,4 @@
-package ir.aut.ap.marketplace.client.config;
+package ir.aut.ap.wall.client.config;
 
 public final class ApiConfig {
 

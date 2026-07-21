@@ -1,9 +1,9 @@
-package ir.aut.ap.marketplace.client.controller;
+package ir.aut.ap.wall.client.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import ir.aut.ap.marketplace.client.util.ApiClient;
-import ir.aut.ap.marketplace.client.util.Navigator;
-import ir.aut.ap.marketplace.client.util.SessionManager;
+import ir.aut.ap.wall.client.util.ApiClient;
+import ir.aut.ap.wall.client.util.Navigator;
+import ir.aut.ap.wall.client.util.SessionManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

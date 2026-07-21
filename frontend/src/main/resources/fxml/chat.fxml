@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ir.aut.ap.wall.client.controller.ChatController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="16" right="16" top="16"/>
+            </padding>
+            <Button onAction="#onBack" styleClass="secondary-button" text="← بازگشت"/>
+            <Label fx:id="headerLabel" styleClass="title-label" text="گفتگو"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button onAction="#onRefresh" styleClass="secondary-button" text="بروزرسانی"/>
+        </HBox>
+    </top>
+    <center>
+        <ListView fx:id="messagesListView">
+            <BorderPane.margin>
+                <Insets bottom="8" left="16" right="16" top="0"/>
+            </BorderPane.margin>
+        </ListView>
+    </center>
+    <bottom>
+        <HBox spacing="8">
+            <padding>
+                <Insets bottom="16" left="16" right="16" top="0"/>
+            </padding>
+            <TextField fx:id="messageField" onAction="#onSend" promptText="پیام خود را بنویسید..." HBox.hgrow="ALWAYS"/>
+            <Button onAction="#onSend" styleClass="primary-button" text="ارسال"/>
+        </HBox>
+    </bottom>
+</BorderPane>
