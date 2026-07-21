@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ir.aut.ap.wall.model.Rating;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -86,6 +87,13 @@ public class AdService {
                                      Long minPrice, Long maxPrice, String sort) {
         List<Advertisement> all = adRepository.findByStatusOrderByCreatedAtDesc(AdStatus.APPROVED);
 
+        Comparator<Advertisement> comparator = switch (sort == null ? "newest" : sort) {
+            case "oldest" -> Comparator.comparing(Advertisement::getCreatedAt);
+            case "price_asc" -> Comparator.comparingLong(Advertisement::getPrice);
+            case "price_desc" -> Comparator.comparingLong(Advertisement::getPrice).reversed();
+            default -> Comparator.comparing(Advertisement::getCreatedAt).reversed();
+        };
+
         return all.stream()
                 .filter(a -> q == null || q.isBlank() ||
                         a.getTitle().toLowerCase().contains(q.toLowerCase()) ||
@@ -94,6 +102,7 @@ public class AdService {
                 .filter(a -> cityId == null || a.getCity().getId().equals(cityId))
                 .filter(a -> minPrice == null || a.getPrice() >= minPrice)
                 .filter(a -> maxPrice == null || a.getPrice() <= maxPrice)
+                .sorted(comparator)
                 .map(AdSummaryDto::of)
                 .toList();
     }
