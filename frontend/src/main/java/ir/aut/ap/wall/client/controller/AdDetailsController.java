@@ -78,15 +78,20 @@ public class AdDetailsController {
                 : " (بدون امتیاز)";
         sellerLabel.setText("فروشنده: " + seller.get("fullName").asText() + avg);
         String status = ad.get("status").asText();
-        String statusText = "وضعیت: " + Format.statusFa(status);
-        if ("REJECTED".equals(status) && ad.hasNonNull("rejectionReason")) {
-            statusText += " — دلیل: " + ad.get("rejectionReason").asText();
-        }
-        statusLabel.setText(statusText);
-        descriptionArea.setText(ad.get("description").asText());
-
         boolean isOwner = SessionManager.getCurrentUserId() != null
                 && seller.get("id").asLong() == SessionManager.getCurrentUserId();
+
+        if (isOwner) {
+            String statusText = "وضعیت: " + Format.statusFa(status);
+            if ("REJECTED".equals(status) && ad.hasNonNull("rejectionReason")) {
+                statusText += " — دلیل: " + ad.get("rejectionReason").asText();
+            }
+            statusLabel.setText(statusText);
+        }
+        statusLabel.setVisible(isOwner);
+        statusLabel.setManaged(isOwner);
+
+        descriptionArea.setText(ad.get("description").asText());
         chatButton.setVisible(!isOwner);
         rateButton.setVisible(!isOwner);
         favoriteButton.setVisible(!isOwner);
