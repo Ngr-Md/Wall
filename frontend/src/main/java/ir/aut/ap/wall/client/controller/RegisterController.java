@@ -44,6 +44,10 @@ public class RegisterController {
             errorLabel.setText("رمزت باید حداقل 8 حرف باشه داداش");
             return;
         }
+        if (!passwordField.getText().matches("^[a-zA-Z0-9._]+$")) {
+            errorLabel.setText("رمز عبور فقط می‌تونه حروف انگلیسی، عدد، نقطه و _ داشته باشه داداش");
+            return;
+        }
         if (!passwordField.getText().equals(confirmPasswordField.getText())) {
             errorLabel.setText("رمز و تکرارش یکی نیستن الدنگ");
             return;
