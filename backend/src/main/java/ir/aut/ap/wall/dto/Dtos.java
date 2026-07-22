@@ -12,7 +12,9 @@ public final class Dtos {
     private Dtos() {}
 
     public record RegisterRequest(
-            @NotBlank @Size(min = 4, max = 50) String username,
+            @NotBlank @Size(min = 4, max = 50)
+            @Pattern(regexp = "^[a-zA-Z0-9._]+$",
+                    message = "نام کاربری فقط می‌تونه حروف انگلیسی، عدد، نقطه و _ داشته باشه") String username,
             @NotBlank @Size(min = 8, max = 100) String password,
             @NotBlank @Size(max = 100) String fullName,
             @NotBlank @Email String email,

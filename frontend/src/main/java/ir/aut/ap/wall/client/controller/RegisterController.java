@@ -36,6 +36,10 @@ public class RegisterController {
             errorLabel.setText("یوزرنیمت باید حداقل 4 حرف باشه داداش");
             return;
         }
+        if (!usernameField.getText().trim().matches("^[a-zA-Z0-9._]+$")) {
+            errorLabel.setText("یوزرنیم فقط می‌تونه حروف انگلیسی، عدد، نقطه و _ داشته باشه داداش");
+            return;
+        }
         if (passwordField.getText().length() < 8) {
             errorLabel.setText("رمزت باید حداقل 8 حرف باشه داداش");
             return;
